@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: auto;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+.header {
+  position: absolute;
+  top: 1%;
+  left: 0;
+  right: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1;
+  width: 90%;
+
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(
+    30deg,
+    rgba(23, 26, 69, 0.7) 15%,
+    rgba(47, 86, 242, 0.7) 50%,
+    rgba(130, 184, 242, 0.7) 85%
+  );
+  color: aliceblue;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  box-shadow: 3px 4px 15px 10px rgb(111, 172, 210);
+}
+
+.header-text {
+  font-size: 36px;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+.header-subtext {
+  font-size: 24px;
+  letter-spacing: 5px;
+  font-family: "BIZ UDPMincho", serif;
+  margin-bottom: 0.5rem;
+}
+
+.link-container {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#reactModalBtn {
+  border-bottom: 4px solid rgb(213, 252, 251);
+  box-shadow: 0px 0px 5px 2px rgb(213, 252, 251);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.3rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+#reactModalBtn:hover,
+#reactModalBtn:focus {
+  transform: translateY(-5px);
+  color: rgb(7, 194, 251);
+}
+
+#reactModalBtn:active {
+  transform: scale(0.9);
+}
+
+/* PROJECT MODAL */
+
+.react-modal-container {
+  display: none;
+  position: absolute; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  right: 0;
+  top: -5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%; /* Full width */
+  height: 99vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  border: 4px solid rgb(213, 252, 251);
+
+  letter-spacing: 4px;
+  background: linear-gradient(
+    30deg,
+    rgba(23, 26, 69, 0.8) 15%,
+    rgba(47, 86, 242, 0.8) 50%,
+    rgba(130, 184, 242, 0.8) 85%
+  );
+}
+
+.react-modal-header-container {
+  background: linear-gradient(
+    30deg,
+    rgba(23, 26, 69, 0.6) 15%,
+    rgba(47, 86, 242, 0.9) 50%,
+    rgba(130, 184, 242, 1) 85%
+  );
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+}
+
+.react-modal-content {
+  width: 100%;
+  height: 100%;
+}
+
+.react-modal-header {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-family: "Press Start 2P", cursive;
+  border-bottom: 4px solid rgb(213, 252, 251);
+  box-shadow: 0px 10px 20px 5px rgb(213, 252, 251);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-container > p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#list-header {
+  border-bottom: 4px solid rgb(213, 252, 251);
+  box-shadow: 0px 5px 20px 20px rgb(213, 252, 251);
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.master-project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-project-container {
+  width: 60%;
+  background: linear-gradient(
+    30deg,
+    rgba(23, 26, 69, 0.7) 15%,
+    rgba(47, 86, 242, 0.7) 50%,
+    rgba(130, 184, 242, 0.7) 85%
+  );
+  border: 4px solid rgb(213, 252, 251);
+
+  margin-bottom: 2rem;
+  box-shadow: 10px 5px 5px rgb(111, 172, 210);
+  transition: all 1s;
+}
+
+.modal-project-container:hover,
+.modal-project-container:active {
+  transform: scale(1.1);
+}
+
+/* CONTACT MODAL */
+
+#contactModalBtn {
+  border-bottom: 4px solid rgb(213, 252, 251);
+  box-shadow: 0px 0px 5px 2px rgb(213, 252, 251);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.3rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+#contactModalBtn:hover,
+#contactModalBtn:focus {
+  transform: translateY(-5px);
+  color: rgb(7, 194, 251);
+}
+
+#contactModalBtn:active {
+  transform: scale(0.9);
+}
+
+.contact-modal-container {
+  position: absolute; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%; /* Full width */
+  height: 99%; /* Full height */
+  overflow: hide; /* Enable scroll if needed */
+  border: 4px solid rgb(213, 252, 251);
+  color: aliceblue;
+  /* display: none; */
+}
+
+.form-header {
+  background: linear-gradient(
+    30deg,
+    rgba(23, 26, 69, 1) 15%,
+    rgba(47, 86, 242, 1) 50%,
+    rgba(130, 184, 242, 1) 85%
+  );
+
+  font-size: 4rem;
+  padding: 2rem 0rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+  font-family: "Press Start 2P", cursive;
+  border-bottom: 4px solid rgb(213, 252, 251);
+  box-shadow: 0px 10px 20px 5px rgb(213, 252, 251);
+  width: 50%;
+}
+
+/* Add a background color and some padding around the form */
+.form-container {
+  background: linear-gradient(
+    30deg,
+    rgba(23, 26, 69, 0.9) 15%,
+    rgba(47, 86, 242, 0.9) 50%,
+    rgba(130, 184, 242, 0.9) 85%
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-form-container {
+  /* background-color: red; */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+::placeholder {
+  color: aqua;
+  letter-spacing: 2px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+.name {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.name input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 4px solid rgb(213, 252, 251);
+  background-color: #97d1f099;
+  font-size: 1rem;
+  color: aliceblue;
+}
+.email {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.email input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 4px solid rgb(213, 252, 251);
+  background-color: #97d1f099;
+  font-size: 1rem;
+  color: aliceblue;
+}
+.message-box {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.message-box textarea {
+  color: aliceblue;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 4px solid rgb(213, 252, 251);
+  background-color: #97d1f099;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Close Button */
+.close {
+  color: #f7f7f7;
+
+  position: absolute;
+  top: 12%;
+  right: 2%;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 3px 4px 15px 10px rgb(1, 24, 38);
+  transition: all 0.5s;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: aliceblue;
+  transform: scale(1.1);
+}
+
+.close:active {
+  transform: scale(0.9);
+}
+
+#send {
+  box-shadow: 3px 4px 15px 10px rgb(111, 172, 210);
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border-radius: 5px;
+  border: 1px solid #337bc4;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px 44px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+  transition: all 0.5s;
+}
+#send:hover {
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background-color: #378de5;
+}
+#send:active {
+  position: relative;
+  top: 1px;
+}
+
+@keyframes buttons {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header-text {
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .header-subtext {
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-family: "BIZ UDPMincho", serif;
+  }
+
+  .link-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #reactModalBtn {
+    font-size: 20px;
+  }
+
+  #contactModalBtn {
+    font-size: 20px;
+  }
+
+  .name {
+    width: 100%;
+  }
+
+  .name input {
+    width: 100%;
+  }
+  .email {
+    width: 100%;
+  }
+
+  .email input {
+    width: 100%;
+  }
+  .message-box {
+    width: 100%;
+  }
+
+  .message-box textarea {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 88%;
+  }
+  .react-modal-header {
+    font-size: 2.4rem;
+  }
+
+  .form-header {
+    font-size: 2rem;
+    width: inherit;
+    width: 65%;
+    line-height: 1.5;
+  }
+
+  #send {
+    margin-left: 2rem;
+  }
+}
