@@ -81,6 +81,8 @@ body {
 #reactModalBtn:focus {
   transform: translateY(-5px);
   color: rgb(7, 194, 251);
+  box-shadow: 0px 0px 5px 2px rgb(7, 194, 251);
+  border-bottom: 4px solid rgb(7, 194, 251);
 }
 
 #reactModalBtn:active {
@@ -95,7 +97,7 @@ body {
   z-index: 2; /* Sit on top */
   left: 0;
   right: 0;
-  top: -5%;
+  top: 0%;
   margin-left: auto;
   margin-right: auto;
   width: 95%; /* Full width */
@@ -129,7 +131,7 @@ body {
 }
 
 .react-modal-header {
-  padding: 1rem;
+  padding: 4.2rem 1rem 1rem 1rem;
   margin-bottom: 1rem;
   font-size: 4rem;
   font-family: "Press Start 2P", cursive;
@@ -178,11 +180,36 @@ body {
   margin-bottom: 2rem;
   box-shadow: 10px 5px 5px rgb(111, 172, 210);
   transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-project-container:hover,
 .modal-project-container:active {
   transform: scale(1.1);
+}
+
+.modal-project-header {
+  padding: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+.modal-project-img {
+  width: 50%;
+  cursor: pointer;
+}
+
+.modal-project-text {
+  padding: 1rem;
+  width: 70%;
+  text-align: center;
+}
+
+.git-img {
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 /* CONTACT MODAL */
@@ -203,6 +230,8 @@ body {
 #contactModalBtn:focus {
   transform: translateY(-5px);
   color: rgb(7, 194, 251);
+  box-shadow: 0px 0px 5px 2px rgb(7, 194, 251);
+  border-bottom: 4px solid rgb(7, 194, 251);
 }
 
 #contactModalBtn:active {
@@ -216,12 +245,12 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 99%; /* Full width */
-  height: 99%; /* Full height */
-  overflow: hide; /* Enable scroll if needed */
+  width: 95%; /* Full width */
+  height: 99vh;
+
   border: 4px solid rgb(213, 252, 251);
   color: aliceblue;
-  /* display: none; */
+  display: none;
 }
 
 .form-header {
@@ -240,7 +269,7 @@ body {
   font-family: "Press Start 2P", cursive;
   border-bottom: 4px solid rgb(213, 252, 251);
   box-shadow: 0px 10px 20px 5px rgb(213, 252, 251);
-  width: 50%;
+  width: 100%;
 }
 
 /* Add a background color and some padding around the form */
@@ -330,18 +359,19 @@ textarea:focus::placeholder {
 
 /* The Close Button */
 .close {
-  color: #f7f7f7;
-
-  position: absolute;
-  top: 12%;
-  right: 2%;
+  color: #0f0337;
+  background-color: #ffffff88;
+  position: fixed;
+  top: 2%;
+  right: 8%;
   font-size: 16px;
   font-weight: bold;
   border: 2px solid black;
   border-radius: 50%;
-  padding: 1rem;
-  box-shadow: 3px 4px 15px 10px rgb(1, 24, 38);
+  padding: 1rem 0.8rem 1rem 1rem;
+  box-shadow: 3px 4px 15px 10px rgb(252, 252, 252);
   transition: all 0.5s;
+  text-align: center;
 }
 
 .close:hover,
@@ -351,9 +381,40 @@ textarea:focus::placeholder {
   cursor: pointer;
   background-color: aliceblue;
   transform: scale(1.1);
+  box-shadow: 3px 4px 15px 10px rgb(246, 91, 85);
 }
 
 .close:active {
+  transform: scale(0.9);
+}
+
+.close-contact {
+  color: #0f0337;
+
+  position: fixed;
+  top: 1%;
+  right: 3%;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 3px 4px 15px 10px rgb(1, 24, 38);
+  transition: all 0.5s;
+  text-align: center;
+}
+
+.close-contact:hover,
+.close-contact:focus {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: aliceblue;
+  transform: scale(1.1);
+  box-shadow: 3px 4px 15px 10px rgb(246, 91, 85);
+}
+
+.close-contact:active {
   transform: scale(0.9);
 }
 
@@ -448,9 +509,35 @@ textarea:focus::placeholder {
   .header {
     width: 88%;
   }
+
+  /* REACTMODAL */
+
+  .close {
+    top: 2%;
+    right: 6%;
+    font-size: 10px;
+  }
+
   .react-modal-header {
     font-size: 2.4rem;
   }
+
+  .modal-project-container {
+    width: 90%;
+  }
+
+  .modal-project-header {
+  }
+
+  .modal-project-img {
+    width: 90%;
+  }
+
+  .modal-project-text {
+    width: 90%;
+  }
+
+  /* FORM MODAL */
 
   .form-header {
     font-size: 2rem;

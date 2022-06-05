@@ -126,7 +126,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(0, 2, 16);
+camera.position.set(0, 15, 5);
 scene.add(camera);
 
 // Controls
@@ -227,7 +227,7 @@ var contactModal = document.getElementById("contactModalContainer");
 var contactModalBtn = document.getElementById("contactModalBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[1];
+var span = document.getElementsByClassName("close-contact")[0];
 
 // When the user clicks the button, open the modal
 contactModalBtn.onclick = function () {
