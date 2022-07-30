@@ -54,8 +54,8 @@ gltfLoader.load("/models/reactLogoAnimated.gltf", (gltf) => {
     if (o.isMesh) o.material = newMaterial;
   });
 
-  model.scale.set(1, 1, 1);
-  model.translateY(3);
+  model.scale.set(3, 3, 3);
+  model.translateY(-3);
   scene.add(model);
 });
 
@@ -126,7 +126,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(0, 15, 5);
+camera.position.set(0, 5, 30);
 scene.add(camera);
 
 // Controls
